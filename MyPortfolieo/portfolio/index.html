@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Faizan | Software Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+
+body{
+  background:#0f172a;
+  color:#e2e8f0;
+  line-height:1.7;
+}
+
+.container{width:90%;max-width:1150px;margin:auto}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(15,23,42,0.8);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  z-index:1000;
+}
+nav h2{color:#fff;font-weight:600}
+nav a{
+  color:#94a3b8;
+  text-decoration:none;
+  margin-left:28px;
+  font-size:14px;
+  transition:0.3s;
+}
+nav a:hover{color:#38bdf8}
+
+header{
+  padding:140px 0 100px 0;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero-text h1{
+  font-size:48px;
+  font-weight:700;
+  color:#ffffff;
+}
+
+.hero-text h1 span{
+  color:#38bdf8;
+}
+
+.hero-text p{
+  margin-top:20px;
+  font-size:18px;
+  color:#94a3b8;
+}
+
+.hero-buttons{
+  margin-top:35px;
+}
+
+.btn-primary{
+  background:#38bdf8;
+  color:#0f172a;
+  padding:12px 26px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  margin-right:15px;
+  transition:0.3s;
+}
+.btn-primary:hover{
+  background:#0ea5e9;
+}
+
+.btn-outline{
+  border:1px solid #334155;
+  color:#e2e8f0;
+  padding:12px 26px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+.btn-outline:hover{
+  background:#1e293b;
+}
+
+/* PROFILE IMAGE */
+.hero-image{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-image img{
+  width:340px;
+  padding:8px;
+  background:linear-gradient(135deg,#38bdf8,#6366f1,#ec4899);
+  border-radius:55% 45% 60% 40% / 40% 60% 45% 55%;
+  box-shadow:
+      0 25px 60px rgba(0,0,0,0.6),
+      0 0 30px rgba(99,102,241,0.5);
+  transition:0.5s ease;
+}
+
+.hero-image img:hover{
+  border-radius:45% 55% 40% 60% / 60% 40% 55% 45%;
+  transform:scale(1.05);
+}
+
+/* SECTIONS */
+section{
+  padding:90px 0;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.section-title{
+  font-size:30px;
+  font-weight:600;
+  margin-bottom:40px;
+  color:#ffffff;
+}
+
+.card{
+  background:#111c2d;
+  padding:30px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+.card:hover{
+  border-color:#38bdf8;
+  transform:translateY(-6px);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:18px;
+}
+
+.skills span{
+  padding:14px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  text-align:center;
+  font-size:14px;
+  font-weight:500;
+  transition:0.4s ease;
+}
+.skills span:hover{
+  background:rgba(56,189,248,0.08);
+  border-color:#38bdf8;
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(56,189,248,0.15);
+}
+
+.timeline-item{
+  margin-bottom:35px;
+}
+.timeline-item h4{
+  color:#38bdf8;
+  margin-bottom:6px;
+}
+.timeline-item span{
+  color:#64748b;
+  font-size:14px;
+}
+
+/* RESUME SECTION */
+.resume-section{
+  text-align:center;
+}
+.resume-section p{
+  margin-bottom:30px;
+  color:#94a3b8;
+  font-size:17px;
+}
+.resume-btn{
+  display:inline-block;
+  padding:14px 32px;
+  background:#38bdf8;
+  color:#0f172a;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:12px;
+  transition:0.3s ease;
+}
+.resume-btn:hover{
+  background:#0ea5e9;
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(56,189,248,0.3);
+}
+
+/* CONTACT */
+.contact-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.contact-links a{
+  flex:1;
+  min-width:180px;
+  padding:18px;
+  border-radius:16px;
+  text-decoration:none;
+  text-align:center;
+  font-weight:500;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  color:#e2e8f0;
+  transition:0.4s ease;
+}
+.contact-links a:hover{
+  background:rgba(56,189,248,0.08);
+  border-color:#38bdf8;
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(56,189,248,0.15);
+}
+
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:#64748b;
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero-image img{width:250px;margin-top:40px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <h2>Syed Faizan</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <div class="container hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Syed Faizan</span></h1>
+      <p>Backend-focused Software Developer specializing in Java, Spring Boot, and RESTful APIs. Passionate about building scalable, clean, and production-ready systems.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="https://github.com/FAIZAN-16" target="_blank" class="btn-outline">GitHub</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="../Images/Profile_Picture.png" alt="Syed Faizan Profile Photo">
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="card">
+      <p>
+        Software Developer with hands-on experience building RESTful backend applications using Core Java, Java 8, Spring Boot, Hibernate, JDBC, and MySQL. Completed a 6-month Software Engineer Internship at Connect and Heal, contributing to API development, SQL reporting, healthcare modules, and production debugging.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="card skills">
+      <span>Core Java</span>
+      <span>Java 8</span>
+      <span>Spring Boot</span>
+      <span>REST APIs</span>
+      <span>Hibernate</span>
+      <span>JDBC</span>
+      <span>MySQL</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Git & GitHub</span>
+      <span>Maven</span>
+      <span>JUnit</span>
+      <span>Postman</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="card timeline-item">
+      <h4>Software Engineer Intern | Connect and Heal, Bangalore</h4>
+      <span>Jul 2025 – Dec 2025</span>
+      <ul style="margin-top:15px;padding-left:18px">
+        <li>Developed RESTful APIs using Spring Boot.</li>
+        <li>Implemented global exception handling and validation.</li>
+        <li>Optimized SQL queries for reporting modules.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Library Management System</h3>
+        <p>Spring Boot backend with layered architecture and MySQL integration.</p>
+      </div>
+      <div class="card">
+        <h3>CloudPoint – Weather Application</h3>
+        <p>Integrated Google Maps and OpenWeather APIs with structured REST services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="container">
+    <h2 class="section-title">Resume</h2>
+    <div class="card resume-section">
+      <p>
+        Download my complete professional resume to explore detailed experience,
+        technical skills, and project contributions.
+      </p>
+      <a href="Resume/Syed_Faizan_Resume.pdf" download class="resume-btn">
+        Download Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="card contact-links">
+      <a href="mailto:syedfaizan1604@gmail.com">Email</a>
+      <a href="https://github.com/FAIZAN-16" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-faizan-software-developer/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Syed Faizan • Professional Portfolio
+</footer>
+
+</body>
+</html>
